@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image Slider</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <div id="slide">
+            <!-- Slider items -->
             <div class="item" style="background-image: url(6.jpg);">
                 <div class="content">
                     <div class="name">Pangong Tso (Ladakh)</div>
-                    <div class="des">Pangong Tso, a high-altitude lake in Ladakh, captivates with its changing hues, set against the stark, majestic mountains of the region</div>
+                    <div class="des">Pangong Tso, a high-altitude lake in Ladakh, captivates with its changing hues, set against the stark, majestic mountains of the region.</div>
                     <button>See more</button>
                 </div>
             </div>
@@ -25,12 +26,10 @@
                     <button>See more</button>
                 </div>
             </div>
-            
-            </div>
             <div class="item" style="background-image: url(3.jpg);">
                 <div class="content">
                     <div class="name">Nainital</div>
-                    <div class="des">Surrounded by serene lakes and rolling hills, Nainital is known for its picturesque beauty and peaceful atmosphere, perfect for a mountain escape."    </div>
+                    <div class="des">Surrounded by serene lakes and rolling hills, Nainital is known for its picturesque beauty and peaceful atmosphere, perfect for a mountain escape.</div>
                     <button>See more</button>
                 </div>
             </div>
@@ -44,7 +43,7 @@
             <div class="item" style="background-image: url(5.jpg);">
                 <div class="content">
                     <div class="name">Manali</div>
-                    <div class="des">Nestled in the Beas River Valley, offering stunning views of the majestic Himalayas</div>
+                    <div class="des">Nestled in the Beas River Valley, offering stunning views of the majestic Himalayas.</div>
                     <button>See more</button>
                 </div>
             </div>
@@ -56,13 +55,36 @@
                 </div>
             </div>
         </div>
+
+        <!-- Navigation buttons -->
         <div class="buttons">
             <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
             <button id="next"><i class="fa-solid fa-angle-right"></i></button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // Function to move to the next slide
+        function nextSlide() {
+            let lists = document.querySelectorAll('.item');
+            document.getElementById('slide').appendChild(lists[0]);
+        }
+
+        // Function to move to the previous slide
+        function prevSlide() {
+            let lists = document.querySelectorAll('.item');
+            document.getElementById('slide').prepend(lists[lists.length - 1]);
+        }
+
+        // Set an interval to automatically move to the next slide every 3 seconds
+        setInterval(nextSlide, 6000); // 3000ms = 3 seconds
+
+        
+
+        // Attach event listeners to buttons
+        document.getElementById('next').onclick = nextSlide;
+        document.getElementById('prev').onclick = prevSlide;
+    </script>
 </body>
 </html>
-  
