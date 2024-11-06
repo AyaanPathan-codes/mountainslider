@@ -100,8 +100,8 @@ body{
 }
 .buttons{
     position: absolute;
-    bottom:30px;
-    z-index: 222222;
+    bottom:100px;
+    z-index: 2;
     text-align: center;
     width:100%;
 }
